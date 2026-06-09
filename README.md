@@ -1,6 +1,6 @@
 # Payment Transaction Validator
 
-![CI](https://github.com/YOUR_USERNAME/payment-transaction-validator/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/kamal-2508/payment-transaction-validator/actions/workflows/ci.yml/badge.svg)
 
 A Python module that validates payment transactions before processing — covering card number integrity, amount limits, currency support, expiry checks, and daily spending caps.
 
