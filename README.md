@@ -1,15 +1,13 @@
 # Payment Transaction Validator
-
 ![CI](https://github.com/kamal-2508/payment-transaction-validator/actions/workflows/ci.yml/badge.svg)
 
 A Python module that validates payment transactions before processing — covering card number integrity, amount limits, currency support, expiry checks, and daily spending caps.
 
-Built with a full pytest test suite (40+ test cases) and GitHub Actions CI pipeline.
+Built with a full pytest test suite (66 test cases) and GitHub Actions CI pipeline.
 
 ---
 
 ## Features
-
 - **Luhn algorithm** — validates card number integrity (industry standard used by Visa, Mastercard)
 - **Amount validation** — enforces minimum (₹0.01) and single transaction limit (₹5,000)
 - **Currency validation** — supports USD, EUR, GBP, INR, JPY
@@ -26,7 +24,7 @@ payment_validator/
 ├── src/
 │   └── validator.py          # Core validation logic
 ├── tests/
-│   └── test_validator.py     # 40+ pytest test cases
+│   └── test_validator.py     # 66 pytest test cases
 ├── .github/
 │   └── workflows/
 │       └── ci.yml            # GitHub Actions CI pipeline
@@ -37,15 +35,13 @@ payment_validator/
 ---
 
 ## Getting Started
-
 ```bash
-git clone https://github.com/YOUR_USERNAME/payment-transaction-validator.git
+git clone https://github.com/kamal-2508/payment-transaction-validator.git
 cd payment-transaction-validator
 pip install -r requirements.txt
 ```
 
 ### Run the validator
-
 ```python
 from src.validator import process_transaction
 
@@ -61,7 +57,6 @@ print(result)
 ```
 
 ### Run tests
-
 ```bash
 # Run all tests with verbose output
 pytest tests/ -v
@@ -76,19 +71,19 @@ pytest tests/ -v --cov=src --cov-report=term-missing
 
 | Module | Coverage |
 |--------|----------|
-| `src/validator.py` | 95%+ |
+| `src/validator.py` | 100% |
 
 Test categories:
 - Unit tests for each validator function
 - Boundary value tests (min/max amounts, exact limits)
 - Edge cases (None inputs, empty strings, type mismatches)
 - Parametrized tests for currency and amount ranges
-- Integration tests for end-to-end `process_transaction()` flow
+- Fixture-based integration tests
+- Mock-based tests using unittest.mock
 
 ---
 
 ## CI/CD
-
 Every push to `main` triggers the GitHub Actions pipeline:
 1. Installs dependencies
 2. Runs full test suite with coverage
@@ -97,7 +92,6 @@ Every push to `main` triggers the GitHub Actions pipeline:
 ---
 
 ## Tech Stack
-
 - **Language:** Python 3.11
 - **Testing:** pytest, pytest-cov, unittest.mock
 - **CI/CD:** GitHub Actions
